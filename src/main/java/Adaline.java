@@ -23,4 +23,15 @@ public class Adaline {
         w2 = w2 + alpha * delta * input.x2;
         wTheta = wTheta + alpha * delta;
     }
+
+    public boolean checkIfLearned(Input input) {
+        double sum = input.x1 * w1 + input.x2 * w2 + 1 * wTheta;
+        int result = -1;
+
+        if(sum > 0) {
+            result = 1;
+        }
+
+        return input.d - result == 0;
+    }
 }

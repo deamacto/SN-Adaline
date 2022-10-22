@@ -8,9 +8,9 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Input> data = deserializeData();
-        for(int i = 0; i < 10; i++) {
+//        for(int i = 0; i < 10; i++) {
             learn(data);
-        }
+//        }
     }
 
     public static void learn(ArrayList<Input> data) {
@@ -36,6 +36,8 @@ public class Main {
 
         System.out.print(generationCounter);
         System.out.println("\t" + adaline.errorSquared / data.size());
+
+        System.out.println(adaline.checkIfLearned(new Input(0.7, 0.7, 1)));
     }
 
     public static void serializeData(GenerateData data) {
